@@ -13,6 +13,13 @@ namespace GazimbaSpeech
 {
     public partial class Form1 : Form
     {
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
 
         public Form1()
         {
@@ -65,12 +72,47 @@ namespace GazimbaSpeech
                 System.Threading.Thread.Sleep(1200);
                 Application.Exit();
             }
+            else if (textBox1.Text == "Pause" || textBox1.Text == "pause")
+            {
+                axWindowsMediaPlayer1.Ctlcontrols.pause();
+                label1.Text = "Paused";
+                synth.SpeakAsync(label1.Text);
+            }
+            else if (textBox1.Text == "Resume" || textBox1.Text == "pause")
+            {
+                axWindowsMediaPlayer1.Ctlcontrols.play();
+                label1.Text = "Playing";
+                synth.SpeakAsync(label1.Text);
+            }
             else
             {
                 synth.SpeakAsync("I'm not so smart for this time, so I don't know what to do!");
                 label1.Text = "I'm not so smart for this time, so I don't know what to do!";
             }
             
+        }
+
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox2.Image = GazimbaSpeech.Properties.Resources.closeButtonHover;
+            pictureBox2.Refresh();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.Image = GazimbaSpeech.Properties.Resources.closeButton;
+            pictureBox2.Refresh();
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
     }
 }
