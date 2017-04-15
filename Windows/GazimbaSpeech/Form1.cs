@@ -40,24 +40,40 @@ namespace GazimbaSpeech
             string s = Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
-            if (textBox1.Text == "Hello" || textBox1.Text == "Hi")
+            if (textBox1.Text.Contains("Hello") || textBox1.Text.Contains("Hi"))
             {
-                synth.SpeakAsync("Hi!");
+                synth.SpeakAsync("Hi!!!!");
                 label1.Text = "Hi!";
             }
             else if (textBox1.Text.Contains("Play") || textBox1.Text.Contains("play"))
             {
-                label1.Text = "Playing " + textBox1.Text.Substring(5);
-                synth.SpeakAsync(label1.Text);
-                axWindowsMediaPlayer1.URL = s + @"\" + textBox1.Text.Substring(5) + ".mp3";
-                axWindowsMediaPlayer1.Visible = false;
+                if (textBox1.Text.Substring(4) != "")
+                {
+                    label1.Text = "Playing " + textBox1.Text.Substring(5);
+                    synth.SpeakAsync(label1.Text);
+                    axWindowsMediaPlayer1.URL = s + @"\" + textBox1.Text.Substring(5) + ".mp3";
+                    axWindowsMediaPlayer1.Visible = false;
+                }
+                else
+                {
+                    label1.Text = "You did not enter the music name!";
+                    synth.SpeakAsync(label1.Text);
+                }
             }
             else if (textBox1.Text.Contains("Video") || textBox1.Text.Contains("video"))
             {
-                label1.Text = "Playing " + textBox1.Text.Substring(6);
-                synth.SpeakAsync(label1.Text);
-                axWindowsMediaPlayer1.URL = s + @"\" + textBox1.Text.Substring(6) + ".mp4";
-                axWindowsMediaPlayer1.Visible = true;
+                if (textBox1.Text.Substring(5) != "")
+                {
+                    label1.Text = "Playing " + textBox1.Text.Substring(6);
+                    synth.SpeakAsync(label1.Text);
+                    axWindowsMediaPlayer1.URL = s + @"\" + textBox1.Text.Substring(6) + ".mp4";
+                    axWindowsMediaPlayer1.Visible = true;
+                }
+                else
+                {
+                    label1.Text = "You did not enter the video name!";
+                    synth.SpeakAsync(label1.Text);
+                }
             }
             else if (textBox1.Text == "Stop" || textBox1.Text == "stop")
             {
