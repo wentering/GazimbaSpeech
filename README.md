@@ -1,4 +1,4 @@
-![alt tag](images/GazimbaSpeech.png)
+![GazimbaSpeech](images/GazimbaSpeech.png)
 AI to speak with (like Siri)
 
 # Contributing
