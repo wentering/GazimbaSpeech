@@ -1,4 +1,4 @@
-# GazimbaSpeech
+!images/GazimbaSpeech.png Logo
 AI to speak with (like Siri)
 
 # Contributing
