@@ -1,4 +1,4 @@
-!images/GazimbaSpeech.png Logo
+!(images/GazimbaSpeech.png)
 AI to speak with (like Siri)
 
 # Contributing
