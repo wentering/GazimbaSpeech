@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GazimbaSpeech.exe" size="38912">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GazimbaSpeech.exe" size="39936">
       <assemblyIdentity name="GazimbaSpeech" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/8nvbKkE722l1JcJBNoDJfJmuQ9Bi82yNUzZdF+Xqro=</dsig:DigestValue>
+        <dsig:DigestValue>nAPHibQedGeJ3wtENbzPG6AxXruyOPeX5AQz0ynWvdg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

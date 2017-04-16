@@ -42,11 +42,13 @@ namespace GazimbaSpeech
             synth.SetOutputToDefaultAudioDevice();
             if (textBox1.Text.Contains("Hello") || textBox1.Text.Contains("Hi"))
             {
+                webBrowser1.Visible = false;
                 synth.SpeakAsync("Hi!!!!");
                 label1.Text = "Hi!";
             }
             else if (textBox1.Text.Contains("Play") || textBox1.Text.Contains("play"))
             {
+                webBrowser1.Visible = false;
                 if (textBox1.Text.Substring(4) != "")
                 {
                     label1.Text = "Playing " + textBox1.Text.Substring(5);
@@ -62,6 +64,7 @@ namespace GazimbaSpeech
             }
             else if (textBox1.Text.Contains("Video") || textBox1.Text.Contains("video"))
             {
+                webBrowser1.Visible = false;
                 if (textBox1.Text.Substring(5) != "")
                 {
                     label1.Text = "Playing " + textBox1.Text.Substring(6);
@@ -77,12 +80,14 @@ namespace GazimbaSpeech
             }
             else if (textBox1.Text == "Stop" || textBox1.Text == "stop")
             {
+                webBrowser1.Visible = false;
                 axWindowsMediaPlayer1.Ctlcontrols.stop();
                 label1.Text = "Stopped";
                 synth.SpeakAsync(label1.Text);
             }
             else if (textBox1.Text == "Exit" || textBox1.Text == "exit" || textBox1.Text == "Quit" || textBox1.Text == "quit")
             {
+                webBrowser1.Visible = false;
                 label1.Text = "Bye bye!";
                 synth.SpeakAsync(label1.Text);
                 System.Threading.Thread.Sleep(1200);
@@ -90,18 +95,27 @@ namespace GazimbaSpeech
             }
             else if (textBox1.Text == "Pause" || textBox1.Text == "pause")
             {
+                webBrowser1.Visible = false;
                 axWindowsMediaPlayer1.Ctlcontrols.pause();
                 label1.Text = "Paused";
                 synth.SpeakAsync(label1.Text);
             }
             else if (textBox1.Text == "Resume" || textBox1.Text == "pause")
             {
+                webBrowser1.Visible = false;
                 axWindowsMediaPlayer1.Ctlcontrols.play();
                 label1.Text = "Playing";
                 synth.SpeakAsync(label1.Text);
             }
+            else if (textBox1.Text.Contains("Map") || textBox1.Text.Contains("map"))
+            {
+                var strinnn = GazimbaSpeech.Properties.Resources.map;
+                webBrowser1.Visible = true;
+                webBrowser1.DocumentText = strinnn;
+            }
             else
             {
+                webBrowser1.Visible = false;
                 synth.SpeakAsync("I'm not so smart for this time, so I don't know what to do!");
                 label1.Text = "I'm not so smart for this time, so I don't know what to do!";
             }

@@ -89,5 +89,31 @@ namespace GazimbaSpeech.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на &lt;!DOCTYPE html&gt;
+        ///&lt;html&gt;
+        ///&lt;body&gt;
+        ///&lt;div id=&quot;map&quot; style=&quot;width:200px;height:200px&quot;&gt;
+        ///
+        ///&lt;script&gt;
+        ///function myMap() {
+        ///    var mapOptions = {
+        ///        center: new google.maps.LatLng(51.5, -0.12),
+        ///        zoom: 10,
+        ///        mapTypeId: google.maps.MapTypeId.HYBRID
+        ///    }
+        ///var map = new google.maps.Map(document.getElementById(&quot;map&quot;), mapOptions);
+        ///}
+        ///&lt;/script&gt;
+        ///&lt;script src=&quot;https://maps.googleapis.com/maps/api/js?callback=myMap&quot;&gt;&lt;/script&gt;
+        ///&lt;/body&gt;
+        ///&lt;html&gt;.
+        /// </summary>
+        internal static string map {
+            get {
+                return ResourceManager.GetString("map", resourceCulture);
+            }
+        }
     }
 }
