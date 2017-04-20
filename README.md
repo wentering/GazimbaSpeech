@@ -1,4 +1,4 @@
-![GazimbaSpeech](https://github.com/wentering/GazimbaSpeech/blob/wentering-patch-1/Images/GazimbaSpeech.png)
+![GazimbaSpeech](https://github.com/wentering/GazimbaSpeech/blob/master/Images/GazimbaSpeech.png)
 
 
 AI to speak with (like Siri)
